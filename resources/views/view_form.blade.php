@@ -37,8 +37,6 @@
 
     span {
         color: red;
-        display:block;
-        {{--  margin-top: 10px;  --}}
     }
 
 </style>
@@ -49,10 +47,10 @@
         {{--  <a href="{{ route('bookingDetails') }}"><button type="submit" class="btn btn-primary">Book Slot</button></a>  --}}
 
         <div class="one">
-            <form action="" method="POST" class="row g-3 form-one">
+            <form action="" method="" class="row g-3 form-one">
                 @csrf
 
-                <h5 class="heading ">User Registration Form</h5>
+                <h5 class="heading ">User Detail of mobile: <span style="color: red">{{ $user->mobile }}</span> </h5>
 
                 <div class="col-md-12">
                     <label class="form-label">User Name</label>
@@ -77,7 +75,8 @@
 
 
                 {{--  <div class="col-12">
-                    <a href=""><button type="submit" class="btn btn-primary">Register User</button></a>
+                    <a href="{{ back()->withInput() }}" class="float-start"><button type="" class="btn btn-primary">Go Back</button></a>
+                    <a href="{{ route('user.list') }}" class="float-end"><button type="" class="btn btn-primary">User List</button></a>
                 </div>  --}}
 
             </form>
